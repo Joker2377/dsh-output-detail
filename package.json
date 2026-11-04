@@ -12,24 +12,59 @@
     "./locale/zh.json": "./locale/zh.json",
     "./icon": "./icon.svg"
   },
-  "files": ["index.js", "client.js", "lib/", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "VERIFICATION.md", "LICENSE"],
-  "engines": {"node": ">=22", "dsh": ">=0.2.1-rc.5 <0.3.0-0"},
-  "peerDependencies": {"zod": "^4.0.0"},
+  "files": [
+    "index.js",
+    "client.js",
+    "lib/",
+    "scripts/",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "VERIFICATION.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "response-style",
+    "verbosity",
+    "composer",
+    "output-detail"
+  ],
+  "author": "Joker2377",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joker2377/dsh-output-detail.git"
+  },
+  "homepage": "https://github.com/Joker2377/dsh-output-detail#readme",
+  "bugs": {
+    "url": "https://github.com/Joker2377/dsh-output-detail/issues"
+  },
+  "engines": {
+    "node": ">=22.19",
+    "dsh": ">=0.2.1-rc.5 <0.3.0-0"
+  },
+  "peerDependencies": {
+    "zod": "^4.0.0"
+  },
   "scripts": {
     "test": "node --test test/*.test.js",
     "check": "node scripts/check.mjs"
   },
   "dsh": {
-    "bundle": {"patch": "./cordis.patch.yml"},
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
     "client": {
       "platform": "web",
       "immediately": true,
-      "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-api-remotes", "@deepseek-ai/dsh-client-locale"]
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-client-locale"
+      ]
     }
-  },
-  "keywords": ["dsh-plugin", "verbosity", "response-style"],
-  "license": "MIT",
-  "author": "Joker2377",
-  "repository": {"type": "git", "url": "git+https://github.com/Joker2377/dsh-output-detail.git"},
-  "homepage": "https://github.com/Joker2377/dsh-output-detail#readme"
+  }
 }

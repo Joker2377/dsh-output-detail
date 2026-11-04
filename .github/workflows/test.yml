@@ -1,0 +1,31 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node-version: [22.x, 24.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      # No dependency install: the suite imports only node: builtins and lib/.
+      # The real-Zod schema test needs a DSH installation and skips here; the
+      # run prints it as SKIP rather than pretending it ran.
+      - name: Manifest, locale and syntax
+        run: node scripts/check.mjs
+      - name: Tests
+        run: npm test
