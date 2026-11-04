@@ -1,0 +1,35 @@
+{
+  "name": "dsh-output-detail",
+  "version": "0.3.0",
+  "private": true,
+  "description": "Five-level response detail meter for the DeepSeek Harness composer; the selection lives in the Session log and the control shows the Host projection.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/en.json": "./locale/en.json",
+    "./locale/zh.json": "./locale/zh.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "client.js", "lib/", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "VERIFICATION.md", "LICENSE"],
+  "engines": {"node": ">=22", "dsh": ">=0.2.1-rc.5 <0.3.0-0"},
+  "peerDependencies": {"zod": "^4.0.0"},
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.mjs"
+  },
+  "dsh": {
+    "bundle": {"patch": "./cordis.patch.yml"},
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation", "@deepseek-ai/dsh-api-remotes", "@deepseek-ai/dsh-client-locale"]
+    }
+  },
+  "keywords": ["dsh-plugin", "verbosity", "response-style"],
+  "license": "MIT",
+  "author": "Joker2377",
+  "repository": {"type": "git", "url": "git+https://github.com/Joker2377/dsh-output-detail.git"},
+  "homepage": "https://github.com/Joker2377/dsh-output-detail#readme"
+}

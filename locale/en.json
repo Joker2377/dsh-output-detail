@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Response Detail",
+    "description": "Five-level response detail meter whose selection lives only in the Session log; the client shows the Host projection."
+  }
+}
