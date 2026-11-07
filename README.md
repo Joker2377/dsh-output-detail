@@ -10,7 +10,7 @@ Composer 左側一格五段計量，決定 agent 下一輪回覆要多詳細：�
 畫面沒有自己的狀態。點一格就是一次 `/output-detail N` 命令，選取由 Session log 的 `command/run`＋`command/done` 摺疊出來，控制項永遠顯示主機投影。純 host＋client 外掛，沒有常駐服務、沒有網路請求、不改 profile。
 
 > [!NOTE]
-> 需要 DeepSeek Harness `>=0.2.1-rc.5 <0.3.0`、Node.js `>=22.19`。外掛把 `zod` 宣告成 peer，由 host profile 提供。
+> 需要 DeepSeek Harness `>=0.2.1-rc.5 <0.3.0-0`、Node.js `>=22.19`。外掛把 `zod` 宣告成 peer，由 host profile 提供。
 
 ## 功能
 
